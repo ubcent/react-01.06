@@ -3,7 +3,7 @@ const cors = require('cors');
 
 const app = express();
 
-const pictures = require('./pictures');ß
+const pictures = require('./pictures');
 
 app.use(express.json());
 app.use(cors());
