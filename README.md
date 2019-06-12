@@ -21,7 +21,7 @@
 
 😌 - легко, 😎 - посложнее, 😱 - сложно или объемно
 
-## Урок 2. Lifecycle and hooks
+## Урок 3. Lifecycle and hooks
 
 Ссылка на видео https://www.youtube.com/watch?v=tsvXhnQdga0
 
