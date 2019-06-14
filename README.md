@@ -18,6 +18,7 @@
 * [Useful scss media query mixins](https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/)
 * [Approaches for media queries creation](https://css-tricks.com/approaches-media-queries-sass/)
 * [Breakpoints and media queries in SCSS](https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2)
+* [Сервис для сжатия картинок](https://squoosh.app/)
 
 ### Домашнее задание
 
