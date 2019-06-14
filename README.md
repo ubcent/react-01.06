@@ -2,11 +2,11 @@
 
 ## Урок 1. Webpack and environment
 
-Ссылка на видео https://www.youtube.com/watch?v=33k73EVMtHM
+[Ссылка на видео](https://www.youtube.com/watch?v=33k73EVMtHM)
 
 ## Урок 2. React introduction
 
-Ссылка на видео https://www.youtube.com/watch?v=-1N4C94BIZQ
+[Ссылка на видео](https://www.youtube.com/watch?v=-1N4C94BIZQ)
 
 ### Домашнее задание
 
@@ -23,7 +23,9 @@
 
 ## Урок 3. Lifecycle and hooks
 
-Ссылка на видео https://www.youtube.com/watch?v=tsvXhnQdga0
+* [Ссылка на видео](https://www.youtube.com/watch?v=tsvXhnQdga0)
+* [Инструкция по запуску серверной части](https://github.com/ubcent/react-01.06/blob/master/docs/SERVER_RUN.md)
+
 
 ### Домашнее задание 
 
