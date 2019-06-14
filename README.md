@@ -4,9 +4,20 @@
 
 [Ссылка на видео](https://www.youtube.com/watch?v=33k73EVMtHM)
 
+### Полезные ссылки
+
+* [Webpack tale](https://hackernoon.com/a-tale-of-webpack-4-and-how-to-finally-configure-it-in-the-right-way-4e94c8e7e5c1?gi=bebc7448320b)
+* [React tutorial](https://reactjs.org/tutorial/tutorial.html)
+
 ## Урок 2. React introduction
 
 [Ссылка на видео](https://www.youtube.com/watch?v=-1N4C94BIZQ)
+
+### Полезные ссылки
+
+* [Useful scss media query mixins](https://glennmccomb.com/articles/useful-sass-scss-media-query-mixins-for-bootstrap/)
+* [Approaches for media queries creation](https://css-tricks.com/approaches-media-queries-sass/)
+* [Breakpoints and media queries in SCSS](https://medium.com/codeartisan/breakpoints-and-media-queries-in-scss-46e8f551e2f2)
 
 ### Домашнее задание
 
