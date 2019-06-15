@@ -42,5 +42,6 @@
 
 ### Домашнее задание 
 
-TBD
+* Сделать красивую форму авторизации
+* Сделать `endless scroll` для списка картинок. Описание работы паджинации описана в [документации по API](https://github.com/ubcent/react-01.06/blob/master/docs/API_DESCRIPTION.md).
 
