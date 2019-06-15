@@ -3,12 +3,21 @@ require('dotenv').config({ path: path.resolve(__dirname, '..', '.env') });
 
 const mongoose = require('mongoose');
 const faker = require('faker');
+const request = require('request');
 
 const User = require('../models/user');
 const Picture = require('../models/picture');
 
 function rand(max = 100) {
   return Math.floor(Math.random() * max);
+}
+
+function getImage() {
+  return new Promise((resolve, reject) => {
+    request({ url: 'https://picsum.photos/500/500', followRedirect: false }, (err, res, body) => {
+      resolve(`https://picsum.photos${res.headers.location}`);
+    });
+  })
 }
 
 async function importSeeds() {
@@ -22,7 +31,7 @@ async function importSeeds() {
     let user = new User({
       firstName: faker.name.firstName(),
       lastName: faker.name.lastName(),
-      avatar: 'https://picsum.photos/500/500',
+      avatar: await getImage(),
       bio: faker.lorem.paragraph(),
       email: faker.internet.email(),
       password: 'qwerty',
@@ -60,7 +69,7 @@ async function importSeeds() {
     }
 
     const picture = new Picture({
-      image: 'https://picsum.photos/500/500',
+      image: await getImage(),
       owner: randOwner,
       likes,
       comments,

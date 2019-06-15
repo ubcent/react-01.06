@@ -52,7 +52,7 @@ app.post('/auth', async (req, res) => {
 app.all('/api*', verifyToken);
 
 app.get('/api/photos', async (req, res) => {
-  const { page = 1, limit = 16 } = req.query;
+  const { page = 1, limit = 15 } = req.query;
   const photos = await Picture.find().skip(limit * (page - 1)).limit(limit);
   const total = await Picture.countDocuments();
   res.json({
@@ -63,7 +63,7 @@ app.get('/api/photos', async (req, res) => {
 });
 
 app.get('/api/photos/:owner', async (req, res) => {
-  const { page = 1, limit = 16 } = req.query;
+  const { page = 1, limit = 15 } = req.query;
   const photos = await Picture.find({ owner: req.params.owner }).skip(limit * (page - 1)).limit(limit);
   const total = await Picture.countDocuments({ owner: req.params.owner })
   res.json({
