@@ -39,6 +39,11 @@
 * [Инструкция по запуску серверной части](https://github.com/ubcent/react-01.06/blob/master/docs/SERVER_RUN.md)
 * [Описание методов API](https://github.com/ubcent/react-01.06/blob/master/docs/API_DESCRIPTION.md)
 
+### Полезные ссылки
+
+* [Состояние компонента в реакте](https://learn-reactjs.ru/faq/component-state)
+* [Хуки в реакте](https://ru.reactjs.org/docs/hooks-intro.html)
+* [React lifecycle](https://hackernoon.com/reactjs-component-lifecycle-methods-a-deep-dive-38275d9d13c0)
 
 ### Домашнее задание 
 
