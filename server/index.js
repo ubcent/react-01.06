@@ -37,7 +37,12 @@ app.post('/auth', async (req, res) => {
   const user = await User.find({email: username, password}).lean();
   if(user) {
     delete user.password;
-    const token = jwt.sign(user, 'secret');
+    const token = jwt.sign({
+      _id: user._id,
+      email: user.email,
+      firstName: user.firstName,
+      lastName: user.lastName,
+    }, 'secret');
     res.json({ token });
   } else {
     res.status(401).json({ message: 'Wrong credentials' });

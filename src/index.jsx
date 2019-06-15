@@ -3,18 +3,28 @@ import './assets/global.scss';
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 
-import { ImageBox } from './components/ImageBox';
+import { Gallery } from './components/Gallery';
+import { Auth } from './components/Auth';
 import { pictures } from './pictures';
 
 class App extends Component {
+  state = { token: null };
+
+  handleToggleClick = () => {
+    this.setState(prevState => ({ visible: !prevState.visible }));
+  }
+
+  handleSuccess = (token) => {
+    this.setState({token});
+  }
+
   render() {
+    const { token } = this.state;
+
     return (
       <main>
-        <div className="container">
-          <div className="gallery">
-            {pictures.map((picture, idx) => <ImageBox key={idx} {...picture} />)}
-          </div>
-        </div>
+        {!token && <Auth onSuccess={this.handleSuccess} />}
+        {token && <Gallery token={token} />}
       </main>
     );
   } 

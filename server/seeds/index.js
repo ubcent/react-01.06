@@ -33,13 +33,13 @@ async function importSeeds() {
     users.push(user);
   }
 
-  for(let i = 0; i < 10000; i++) {
+  for(let i = 0; i < 1000; i++) {
     const randOwner = users[rand()];
     
     const likes = [];
     const comments = [];
 
-    const likesCount = rand(1000);
+    const likesCount = rand(100);
     const commentsCount = rand();
 
     for(let j = 0; j < likesCount; j++) {
@@ -64,7 +64,7 @@ async function importSeeds() {
       owner: randOwner,
       likes,
       comments,
-    })
+    });
 
     await picture.save();
 
