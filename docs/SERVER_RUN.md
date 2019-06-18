@@ -7,10 +7,10 @@
 ### Установка на `Ubuntu`
 Устанавливам `Docker` если ещё не установлен и создаем группу
 ```bash
-    $ curl -sSL https://get.docker.com/ | sudo sh
-    $ sudo gpasswd -a ${USER} docker  
-    $ sudo service docker restart
-    $ newgrp docker
+$ curl -sSL https://get.docker.com/ | sudo sh
+$ sudo gpasswd -a ${USER} docker  
+$ sudo service docker restart
+$ newgrp docker
 ```
 
 Скачиваем `deb` пакет `kitematic` из [репозитория](https://github.com/docker/kitematic) и устанавливаем.
