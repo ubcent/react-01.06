@@ -10,6 +10,11 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    alias: {
+      assets: path.resolve(__dirname, 'src', 'assets'),
+      components: path.resolve(__dirname, 'src', 'components'),
+      containers: path.resolve(__dirname, 'src', 'containers'),
+    }
   },
   module: {
     rules: [
