@@ -44,7 +44,7 @@ export class GalleryContainer extends Component {
   }
 
   shouldWeLoad = () => {
-    const { state, pictures, loading, total } = this.state;
+    const { pictures, loading, total } = this.state;
 
     return (total != null || total > pictures.length) && !loading;
   }
