@@ -36,7 +36,6 @@ app.post('/auth', async (req, res) => {
 
   const user = await User.find({ email: username, password }).lean();
   if (user) {
-    delete user.password;
     const token = jwt.sign({
       _id: user._id,
       email: user.email,
@@ -65,6 +64,16 @@ app.get('/api/photos', async (req, res) => {
     total,
     photos,
   });
+});
+
+app.get('/api/users/:id', async (req, res) => {
+  let user = await User.findById(req.params.id);
+  user = user.toObject();
+
+  // удаляем пароль
+  delete user.password;
+
+  res.json(user);
 });
 
 app.get('/api/photos/:owner', async (req, res) => {

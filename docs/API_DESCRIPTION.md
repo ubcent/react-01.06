@@ -37,3 +37,19 @@
   photos: array, // массив с фотографиями
 }
 ```
+
+## Запрос информации по пользователю
+
+`GET /api/users/:userId`
+
+Формат ответа:
+
+```javascript
+{
+  firstName: string,
+  lastName: string,
+  avatar: string,
+  bio: string,
+  email: string,
+}
+```
