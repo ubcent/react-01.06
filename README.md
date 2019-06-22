@@ -55,4 +55,13 @@
 
 ## Урок 4. Portals and HoC pattern
 
-[Ссылка на видео](https://www.youtube.com/watch?v=RooTBTo9rZ8)
+[Ссылка на видео](https://www.youtube.com/watch?v=GHugtA8fKo4)
+
+### Полезные ссылки
+
+* [React Portals](https://reactjs.org/docs/portals.html)
+* [Паттерны HoC и Render Props](https://medium.com/nuances-of-programming/%D1%80%D0%B0%D0%B7%D0%B1%D0%B8%D1%80%D0%B0%D0%B5%D0%BC%D1%81%D1%8F-%D1%81-react-render-props-%D0%B8-hoc-263f498ac841)
+
+### Домашнее задание
+
+На этот раз задание всего лишь одно и оно простое. Необходимо сделать, чтобы при нажатии на определенную картинку в списке она открывалась в модальном окне. API-метод `/api/photos` возвращает всю необходимую информацию, включая информацию о пользователях. Подробности в [документации по API](https://github.com/ubcent/react-01.06/blob/master/docs/API_DESCRIPTION.md).
