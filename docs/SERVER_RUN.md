@@ -4,6 +4,17 @@
 
 Перейти по [ссылке](https://www.docker.com/docker-toolbox) и скачать установщик для вашей ОС. Из всего пакета нам главным образом понадобится очень классная и полезная программа `kitematic`.
 
+### Установка на `Ubuntu`
+Устанавливам `Docker` если ещё не установлен и создаем группу
+```bash
+$ curl -sSL https://get.docker.com/ | sudo sh
+$ sudo gpasswd -a ${USER} docker  
+$ sudo service docker restart
+$ newgrp docker
+```
+
+Скачиваем `deb` пакет `kitematic` из [репозитория](https://github.com/docker/kitematic) и устанавливаем.
+
 ## Работа с `kitematic`
 
 ### Откройте `kitematic`
