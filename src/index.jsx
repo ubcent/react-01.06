@@ -8,7 +8,7 @@ import { Auth } from 'components/Auth';
 import { Modal } from 'components/Modal';
 // Roscoe9@gmail.com
 class App extends Component {
-  state = { token: localStorage.getItem('token'), isModalVisible: true };
+  state = { token: localStorage.getItem('token'), isModalVisible: false };
 
   handleToggleClick = () => {
     this.setState(prevState => ({ visible: !prevState.visible }));
