@@ -55,8 +55,8 @@
 
 ## Урок 4. Portals and HoC pattern
 
-[Ссылка на видео](https://www.youtube.com/watch?v=GHugtA8fKo4)
-[Bonus video](https://www.youtube.com/watch?v=SchGvQYYKGc)
+* [Ссылка на видео](https://www.youtube.com/watch?v=GHugtA8fKo4)
+* [Bonus video](https://www.youtube.com/watch?v=SchGvQYYKGc)
 
 ### Полезные ссылки
 
