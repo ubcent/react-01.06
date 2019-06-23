@@ -34,7 +34,7 @@ app.use(cors());
 app.post('/auth', async (req, res) => {
   const { username, password } = req.body;
 
-  const user = await User.find({ email: username, password }).lean();
+  let user = await User.findOne({ email: username, password }).lean();
   if (user) {
     const token = jwt.sign({
       _id: user._id,
@@ -42,7 +42,8 @@ app.post('/auth', async (req, res) => {
       firstName: user.firstName,
       lastName: user.lastName,
     }, 'secret');
-    res.json({ token });
+    delete user.password;
+    res.json({ token, user });
   } else {
     res.status(401).json({ message: 'Wrong credentials' });
   }
