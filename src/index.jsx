@@ -38,7 +38,7 @@ class App extends Component {
 
     return (
       <main>
-        <button onClick={this.handleSignOut}>Sign Out</button>
+        {token && <button onClick={this.handleSignOut}>Sign Out</button>}
         {!token && <Auth onSuccess={this.handleSuccess} />}
         {token && <GalleryContainer token={token} />}
         {isModalVisible && <Modal onClose={this.handleModalClose} title="Hi! I'm modal">
