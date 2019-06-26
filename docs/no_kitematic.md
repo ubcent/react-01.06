@@ -1,6 +1,8 @@
 # Описание запуска docker-контейнера с mongo из консоли linux || macOS
 
-![Установка Docker на Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/docker-ubuntu-18-04-1-ru)
+[Установка Docker на Ubuntu 18.04](https://www.digitalocean.com/community/tutorials/docker-ubuntu-18-04-1-ru)
+
+:exclamation: **Обратите внимание, что последующие шаги выполняются с установленным Docker.**
 
 ## Инициализация (делаем один раз)
 
