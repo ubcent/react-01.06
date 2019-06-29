@@ -77,21 +77,14 @@ app.get('/api/users/:id', async (req, res) => {
   res.json(user);
 });
 
-app.get('/api/photos/:owner', async (req, res) => {
-  const { page = 1, limit = 15 } = req.query;
-  const photos = await Picture.find({ owner: req.params.owner })
+app.get('/api/photos/:id', async (req, res) => {
+  const photo = await Picture.findById(req.params.id)
     .populate([
       'comments.user',
       'likes.user',
       'owner'
-    ])
-    .skip(limit * (page - 1)).limit(limit);
-  const total = await Picture.countDocuments({ owner: req.params.owner })
-  res.json({
-    page,
-    total,
-    photos,
-  });
+    ]);
+  res.json(photo);
 })
 
 app.listen(8888, () => {

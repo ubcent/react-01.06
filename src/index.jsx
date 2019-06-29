@@ -2,10 +2,12 @@ import './assets/global.scss';
 
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 import { GalleryContainer } from 'containers/GalleryContainer';
 import { Auth } from 'components/Auth';
 import { Modal } from 'components/Modal';
+import { PostContainer } from 'containers/PostContainer';
 // Roscoe9@gmail.com
 class App extends Component {
   state = { token: localStorage.getItem('token'), isModalVisible: false };
@@ -39,8 +41,12 @@ class App extends Component {
     return (
       <main>
         {token && <button onClick={this.handleSignOut}>Sign Out</button>}
-        {!token && <Auth onSuccess={this.handleSuccess} />}
-        {token && <GalleryContainer token={token} />}
+        <Link to="/">Home</Link>
+        <Link to="/auth">Auth</Link>
+        <Switch>
+          <Route path="/posts" component={GalleryContainer} />
+          <Route path="/auth" render={() => (<Auth onSuccess={this.handleSuccess} />)} exact />
+        </Switch>
         {isModalVisible && <Modal onClose={this.handleModalClose} title="Hi! I'm modal">
           <div>A circular color picker component also named color-wheel performed with react and pure svg. Mobile compatible.</div>
         </Modal>}
@@ -49,4 +55,9 @@ class App extends Component {
   } 
 }
 
-ReactDom.render(<App />, document.getElementById('root'));
+ReactDom.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('root'),
+);

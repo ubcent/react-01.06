@@ -36,6 +36,9 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new MiniCssExtractLoader({
       filename: 'style.[contenthash].css',
