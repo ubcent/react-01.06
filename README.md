@@ -66,3 +66,17 @@
 ### Домашнее задание
 
 На этот раз задание всего лишь одно и оно простое. Необходимо сделать, чтобы при нажатии на определенную картинку в списке она открывалась в модальном окне. API-метод `/api/photos` возвращает всю необходимую информацию, включая информацию о пользователях. Подробности в [документации по API](https://github.com/ubcent/react-01.06/blob/master/docs/API_DESCRIPTION.md).
+
+## Урок 5. Routing
+
+[Ссылка на видео](https://youtu.be/8vIPqBScJbE)
+
+### Полезные ссылки
+
+* [withRouter](https://github.com/ReactTraining/react-router/blob/master/packages/react-router/docs/api/withRouter.md)
+* [Вложенные роуты](https://tylermcginnis.com/react-router-nested-routes/)
+* [Краткая документация](https://maxfarseer.gitbooks.io/react-router-course-ru/content/sozdaem_primitivnii_router.html)
+
+### Домашнее задание
+
+Продолжить начатое на уроке. Сделать красивое отображение фотографии в модальном окне.
