@@ -1,0 +1,1 @@
+export { CommentsHoc } from './CommentsHoc';

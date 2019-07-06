@@ -8,6 +8,8 @@ import { GalleryContainer } from 'containers/GalleryContainer';
 import { Auth } from 'components/Auth';
 import { Modal } from 'components/Modal';
 import { PostContainer } from 'containers/PostContainer';
+import { CommentsHoc } from 'components/CommentsHoc';
+
 // Roscoe9@gmail.com
 class App extends Component {
   state = { token: localStorage.getItem('token'), isModalVisible: false };
@@ -40,6 +42,7 @@ class App extends Component {
 
     return (
       <main>
+        <CommentsHoc />
         {token && <button onClick={this.handleSignOut}>Sign Out</button>}
         <Link to="/">Home</Link>
         <Link to="/auth">Auth</Link>
