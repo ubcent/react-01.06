@@ -3,12 +3,14 @@ import './assets/global.scss';
 import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
 import { GalleryContainer } from 'containers/GalleryContainer';
 import { Auth } from 'components/Auth';
 import { Modal } from 'components/Modal';
 import { PostContainer } from 'containers/PostContainer';
 import { CommentsHoc } from 'components/CommentsHoc';
+import { store } from './store.js'
 
 // Roscoe9@gmail.com
 class App extends Component {
@@ -59,8 +61,10 @@ class App extends Component {
 }
 
 ReactDom.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root'),
 );

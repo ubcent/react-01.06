@@ -1,69 +1,24 @@
 import React, { Component, Fragment } from 'react';
 
+import { connect } from 'react-redux';
+
 import { Switch, Route } from 'react-router-dom';
 
 import { Gallery } from 'components/Gallery';
 import { Loading } from 'components/Loading';
 
 import { PostContainer } from 'containers/PostContainer';
+import { load } from 'actions/pictures';
 
-export class GalleryContainer extends Component {
-  state = { pictures: [], loading: false, page: 1, total: null }
-
+class GalleryUnmounted extends Component {
   componentDidMount() {
-    if(!localStorage.getItem('token') || localStorage.getItem('token') === 'null') {
-      return this.props.history.replace('/auth');
-    }
-    this.loadItems();
-  }
+    const { loadImages } = this.props;
 
-  loadItems = () => {
-    const { token } = this.props;
-    const { page } = this.state;
-    this.setState({ loading: true });
-
-    fetch(`http://localhost:8888/api/photos?page=${page}`, {
-      headers: {
-        'Content-type': 'application/json',
-        'authorization': `Bearer ${localStorage.getItem('token')}`,
-      },
-    })
-      .then(response => response.json())
-      .then(data => {
-        this.setState(prevState => ({
-          loading: false,
-          page: prevState.page + 1,
-          total: data.total,
-          pictures: prevState.pictures.concat(
-            data.photos.map(photo => ({ id: photo._id, image: photo.image, likes: photo.likes.length, comments: photo.comments.length }))
-          ),
-        }));
-      })
-      .catch(() => {
-        this.setState({ loading: false });
-      });
-  }
-
-  renderItem = (picture) => {
-    return (
-      <div><img src={picture.image} /></div>
-    )
-  }
-
-  shouldWeLoad = () => {
-    const { pictures, loading, total } = this.state;
-
-    return (total != null || total > pictures.length) && !loading;
-  }
-
-  handleScroll = () => {
-    if(this.shouldWeLoad()) {
-      this.loadItems();
-    }
+    loadImages();
   }
 
   render() {
-    const { pictures, loading } = this.state;
+    const { pictures, loading } = this.props;
 
     return (
       <Fragment>
@@ -74,3 +29,18 @@ export class GalleryContainer extends Component {
     );
   }
 }
+
+function mapStateToProps(state, props) {
+  return {
+    pictures: state.pictures.entries,
+    loading: state.pictures.loading,
+  }
+}
+
+function mapDispatchToProps(dispatch, props) {
+  return {
+    loadImages: () => load(dispatch),
+  }
+}
+
+export const GalleryContainer = connect(mapStateToProps, mapDispatchToProps)(GalleryUnmounted);
